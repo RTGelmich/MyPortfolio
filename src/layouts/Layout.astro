@@ -1,6 +1,6 @@
 ---
 interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
@@ -8,44 +8,124 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body class="black-bg white-text">
+        <slot />
+    </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+    :root {
+        --accent: 136, 58, 234;
+        --accent-light: 224, 204, 250;
+        --accent-dark: 49, 10, 101;
+        --accent-gradient: linear-gradient(
+            45deg,
+            rgb(var(--accent)),
+            rgb(var(--accent-light)) 30%,
+            white 60%
+        );
+		--neon-pink: #05f786fd;    
+    }
+    html {
+        font-family: system-ui, sans-serif;
+        background-size: 224px;
+    }
+    body.black-bg {
+        background-color: #000000;
+    }
+    .name-container {
+        display: flex;
+        align-items: center;
+    }
+    .Nombre {
+        color: #ffffff; 
+        font-size: 200%;
+        margin-left: 2%;
+		font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .neon-pink {
+        color: var(--neon-pink);
+        text-shadow: 0 0 12px var(--neon-pink), 
+                     0 0 20px var(--neon-pink), 
+                     0 0 90px var(--neon-pink), 
+                     0 0 100px var(--neon-pink), 
+                     0 0 80px var(--neon-pink);
+        font-size: 200%;
+		font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+	.Inicio {
+		color: var(--neon-pink);
+        text-shadow: 0 0 12px var(--neon-pink), 
+                     0 0 20px var(--neon-pink), 
+                     0 0 90px var(--neon-pink), 
+                     0 0 100px var(--neon-pink), 
+                     0 0 80px var(--neon-pink);
+        font-size: 200%;
+        margin-left: 48%;
+		cursor: pointer;
+		font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-decoration: underline; 
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+
+	.Educacion, .Proyectos, .Contacto, .About {
+        color: #ffffff; 
+        font-size: 130%;
+        margin-left: 1%;
+		font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		cursor: pointer;
+    }
+	.Educacion:hover, .Proyectos:hover, .Contacto:hover, .About:hover {
+        text-decoration: underline; /* Subrayado al pasar el mouse */
+    }
+	.Developinfo {
+	display: flex;
+	align-items: center;
+}
+.Hello{
+	    color: #ffffff; 
+        font-size: 300%;
+		font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		margin-top: 10%;
+		margin-left: 15%;
+}
+
+.Developer {
+	color: var(--neon-pink);
+        text-shadow: 0 0 12px var(--neon-pink), 
+                     0 0 20px var(--neon-pink), 
+                     0 0 90px var(--neon-pink), 
+                     0 0 100px var(--neon-pink), 
+                     0 0 80px var(--neon-pink);
+        font-size: 300%;
+        margin-left: 1%;
+		margin-top: 10%;
+		cursor: pointer;
+		font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.InfoDevelop{
+	color: #ffffff; 
+        font-size: 100%;
+		font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		margin-top: 10%;
+		margin-left: 15%;
+	
+}
+    code {
+        font-family:
+            Menlo,
+            Monaco,
+            Lucida Console,
+            Liberation Mono,
+            DejaVu Sans Mono,
+            Bitstream Vera Sans Mono,
+            Courier New,
+            monospace;
+    }
 </style>
